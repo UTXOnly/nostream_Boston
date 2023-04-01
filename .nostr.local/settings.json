@@ -1,10 +1,10 @@
 {
   "info": {
-    "relay_url": "wss://nostream.localtest.me",
-    "name": "nostream.localtest.me",
-    "description": "A nostr relay written in Typescript.",
-    "pubkey": "00000000827ffaa94bfea288c3dfce4422c794fbb96625b6b31e9049f729d700",
-    "contact": "operator@your-domain.com"
+    "relay_url": "wss://nostr.bostonbtc.com",
+    "name": "Boston Bitcoin Nostr Relay",
+    "description": "A Nostr Relay run by Boston Bitcoiners",
+    "pubkey": "4503baa127bdfd0b054384dc5ba82cb0e2a8367cbdb0629179f00db1a34caacc",
+    "contact": "bh419@protonmail.com"
   },
   "network": {
     "maxPayloadSize": 131072,
