@@ -52,6 +52,7 @@ services:
     restart: on-failure
     networks:
       default:
+        ipv4_address: 10.10.10.9
   nostream-db:
     image: postgres
     container_name: nostream-db
@@ -65,6 +66,8 @@ services:
       - ${PWD}/postgresql.conf:/postgresql.conf
     networks:
       default:
+        ipv4_address: 10.10.10.8
+
     command: postgres -c 'config_file=/postgresql.conf'
     restart: always
     healthcheck:
@@ -79,14 +82,17 @@ services:
     volumes:
       - cache:/data
     command: redis-server --loglevel warning --requirepass nostr_ts_relay
-    networks:
-      default:
     restart: always
     healthcheck:
       test: [ "CMD", "redis-cli", "ping", "|", "grep", "PONG" ]
       interval: 1s
       timeout: 5s
       retries: 5
+    ports:
+     - 6379
+    networks:
+      default:
+        ipv4_address: 10.10.10.6
   nostream-migrate:
     image: node:18-alpine3.16
     container_name: nostream-migrate
