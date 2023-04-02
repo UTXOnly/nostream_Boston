@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker rm $(docker ps -a -q) -f
+docker rmi $(docker image ls -a -q) -f
