@@ -67,8 +67,8 @@ services:
     networks:
       default:
         ipv4_address: 10.10.10.8
-    ports:
-      - 127.0.0.1:5432:5432
+    #ports:
+    #  - 127.0.0.1:5432:5432
 
     command: postgres -c 'config_file=/postgresql.conf'
     restart: always
